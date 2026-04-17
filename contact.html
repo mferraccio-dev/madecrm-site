@@ -166,26 +166,39 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
   <p class="footer-copy">© 2026 Made CRM · Built in Colorado</p>
 </footer>
 
-<script>
 function submitForm() {
   const name    = document.getElementById('f-name').value.trim();
   const company = document.getElementById('f-company').value.trim();
   const email   = document.getElementById('f-email').value.trim();
   const message = document.getElementById('f-message').value.trim();
-
   if (!name || !company || !email) {
     alert('Please fill in your name, company, and email.');
     return;
   }
-
-  // Build mailto link as fallback — replace with a form service like Formspree later
-  const subject = encodeURIComponent(`Made CRM Inquiry — ${company}`);
-  const body    = encodeURIComponent(
-    `Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\nMessage:\n${message}`
-  );
-  window.location.href = `mailto:hello@madecrm.io?subject=${subject}&body=${body}`;
-
-  document.getElementById('success-msg').style.display = 'block';
+  const btn = document.querySelector('button[onclick="submitForm()"]');
+  if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
+  fetch('https://formspree.io/f/xnjldvlq', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name, company, email, message })
+  })
+  .then(res => {
+    if (res.ok) {
+      document.getElementById('success-msg').style.display = 'block';
+      document.getElementById('f-name').value = '';
+      document.getElementById('f-company').value = '';
+      document.getElementById('f-email').value = '';
+      document.getElementById('f-message').value = '';
+      if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
+    } else {
+      alert('Something went wrong. Please try again.');
+      if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
+    }
+  })
+  .catch(() => {
+    alert('Network error. Please try again.');
+    if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
+  });
 }
 </script>
 
