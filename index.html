@@ -31,7 +31,8 @@ a{color:inherit;text-decoration:none}
 
 /* HERO */
 .hero{position:relative;padding:96px 56px 80px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;max-width:1180px;margin:0 auto;position:relative;z-index:2}
+.hero-grid{max-width:1180px;margin:0 auto;position:relative;z-index:2}
+.hero-text{max-width:680px;margin-bottom:56px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--line2);border-radius:100px;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold2);font-weight:500;margin-bottom:24px;background:rgba(200,146,42,0.04)}
 .eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(200,146,42,.2)}
 h1.hero-h{font-family:'Instrument Serif',serif;font-size:72px;line-height:.98;letter-spacing:-2px;font-weight:400;margin-bottom:24px}
@@ -46,15 +47,12 @@ h1.hero-h em{display:block;color:var(--gold2)}
 .hero-meta .pip{width:3px;height:3px;border-radius:50%;background:var(--t3)}
 
 /* Hero Visual */
-.pipe-stack{position:relative;height:520px;perspective:1600px}
-.pipe-card{position:absolute;border-radius:12px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 30px 60px -20px rgba(0,0,0,.7),0 0 0 1px rgba(200,146,42,.08),inset 0 1px 0 rgba(255,255,255,.04);background:var(--surface)}
-.pipe-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
-.pipe-card.c1{top:0;left:0;width:340px;height:210px;z-index:2;transform:rotateY(8deg) rotateX(3deg)}
-.pipe-card.c2{top:40px;left:200px;width:340px;height:230px;z-index:4;transform:rotateY(-3deg) rotateX(-1deg);box-shadow:0 40px 80px -16px rgba(0,0,0,.8),0 0 0 1px rgba(200,146,42,.22),0 0 80px rgba(200,146,42,.08)}
-.pipe-card.c3{top:240px;left:0;width:340px;height:220px;z-index:3;transform:rotateY(6deg) rotateX(1deg)}
-.pipe-card.c4{top:280px;left:210px;width:340px;height:200px;z-index:1;transform:rotateY(-7deg) rotateX(-2deg)}
-.glow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(200,146,42,.18),transparent 70%);top:80px;left:50px;filter:blur(40px);z-index:0;animation:float 8s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-15px)}}
+.hero-frame{border-radius:14px;overflow:hidden;border:1px solid var(--line2);box-shadow:0 40px 80px -24px rgba(0,0,0,.8),0 0 0 1px rgba(200,146,42,.12)}
+.hero-frame-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface2);border-bottom:1px solid var(--line)}
+.hero-frame-dot{width:10px;height:10px;border-radius:50%;background:#3a4255}
+.hero-frame-dot.r{background:#c8553d}.hero-frame-dot.y{background:#c8922a}.hero-frame-dot.g{background:#4a8c5a}
+.hero-frame-url{flex:1;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t3)}
+.hero-frame img{display:block;width:100%;height:auto}
 
 /* Sections */
 section{position:relative;z-index:2}
@@ -127,12 +125,6 @@ footer a:hover{color:var(--t2)}
 @media(max-width:900px){
   .nav{padding:14px 24px}.nav-links{display:none}
   .hero{padding:72px 24px 56px}
-  .hero-grid{grid-template-columns:1fr;gap:48px}
-  .pipe-stack{height:300px}
-  .pipe-card.c1{width:200px;height:130px}
-  .pipe-card.c2{width:200px;height:140px;left:120px}
-  .pipe-card.c3{width:200px;height:130px;top:155px}
-  .pipe-card.c4{width:200px;height:120px;top:170px;left:125px}
   .s{padding:64px 24px}
   .proof{padding:40px 24px}
   .problem{grid-template-columns:1fr;gap:40px}
@@ -160,7 +152,7 @@ footer a:hover{color:var(--t2)}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid">
-    <div>
+    <div class="hero-text">
       <div class="eyebrow"><span class="dot"></span>Built for small B2B teams</div>
       <h1 class="hero-h">The CRM your team<em>will actually use.</em></h1>
       <p class="hero-sub">Most CRMs fail because they're built for everyone. Made CRM is custom-built for your team — your pipeline, your stages, your workflow. Live in under four weeks.</p>
@@ -176,12 +168,16 @@ footer a:hover{color:var(--t2)}
         <span>Live in 2–4 weeks</span>
       </div>
     </div>
-    <div class="pipe-stack">
-      <div class="glow"></div>
-      <div class="pipe-card c1"><img src="ss2.png" alt="Pipeline view"></div>
-      <div class="pipe-card c2"><img src="ss1.png" alt="Revenue Dashboard"></div>
-      <div class="pipe-card c3"><img src="ss3.png" alt="Agency pipeline"></div>
-      <div class="pipe-card c4"><img src="ss2.png" alt="Deals view"></div>
+    <div class="hero-frame">
+      <div class="hero-frame-bar">
+        <div class="hero-frame-dot r"></div>
+        <div class="hero-frame-dot y"></div>
+        <div class="hero-frame-dot g"></div>
+        <div class="hero-frame-url">demo.madecrm.io · Wealth Management</div>
+      </div>
+      <a href="https://demo.madecrm.io" target="_blank">
+        <img src="ss4.png" alt="Made CRM — Wealth Management pipeline view">
+      </a>
     </div>
   </div>
 </section>
@@ -265,7 +261,7 @@ footer a:hover{color:var(--t2)}
         <div class="pf-url">demo.madecrm.io</div>
       </div>
       <a href="https://demo.madecrm.io" target="_blank" style="display:block">
-        <img src="ss1.png" alt="Made CRM live demo — reports dashboard" style="display:block;width:100%;height:auto">
+        <img src="ss2.png" alt="Made CRM live demo — pipeline view" style="display:block;width:100%;height:auto">
       </a>
     </div>
   </div>
