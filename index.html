@@ -96,6 +96,10 @@ h2 em{font-style:italic;color:var(--accent2)}
 .feature h3{font-size:16px;font-weight:600;margin-bottom:8px}
 .feature p{font-size:14px;color:var(--t2);line-height:1.7}
 .features-sub{font-size:17px;color:var(--t2);max-width:580px;font-weight:300;line-height:1.7;margin-top:12px}
+.feature-premium{border-color:rgba(200,146,42,0.3);background:linear-gradient(135deg,rgba(200,146,42,0.06),var(--surface))}
+.feature-premium:hover{border-color:rgba(200,146,42,0.5)}
+.feature-premium .feature-icon{background:rgba(200,146,42,0.12)}
+.feature-premium-badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;background:rgba(200,146,42,0.15);color:#c8922a;border-radius:4px;margin-bottom:8px;letter-spacing:0.5px;text-transform:uppercase}
 
 /* ── PRICING ── */
 .pricing-section{background:var(--surface)}
@@ -154,9 +158,9 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge"><span></span> Built by someone who's been on your team</div>
-    <h1>Finally see your pipeline clearly —<br><em>and act on it.</em></h1>
-    <p class="hero-sub">I've worked at small companies running on HubSpot, Salesforce, and spreadsheets. The problem was never the data — it was that nobody could see it clearly enough to act on it. Made CRM fixes that.</p>
+    <div class="hero-badge"><span></span> Custom CRM for small B2B teams</div>
+    <h1>The CRM your team<br><em>will actually use.</em></h1>
+    <p class="hero-sub">Most CRMs fail because they're built for everyone. This one is built for you.</p>
     <div class="hero-actions">
       <a href="https://demo.madecrm.io" target="_blank" class="btn-primary">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="white" stroke-width="1.5"/><path d="M6 5.5l4 2.5-4 2.5V5.5z" fill="white"/></svg>
@@ -184,8 +188,8 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
 <section class="problem">
   <div class="section-inner">
     <p class="section-label">Sound familiar?</p>
-    <h2>You're either paying for a tool your team barely uses —<br><em>or drowning in spreadsheets nobody trusts.</em></h2>
-    <p class="section-sub">Most small B2B teams know exactly what's in their pipeline. They just can't see it clearly enough to act on it.</p>
+    <h2>You're either overpaying for a tool your team barely uses —<br><em>or running your pipeline out of a spreadsheet nobody trusts.</em></h2>
+    <p class="section-sub">Most small B2B teams know exactly what's in their pipeline. The problem is nobody's looking at the same picture.</p>
     <div class="problem-grid">
       <div class="problem-list">
         <div class="problem-item">
@@ -199,14 +203,14 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
           <span class="problem-icon">📊</span>
           <div>
             <h4>Spreadsheets don't scale with your team</h4>
-            <p>A shared Google Sheet works until someone updates the wrong cell, a deal gets missed, or your manager asks for a pipeline report and it takes two hours to build one.</p>
+            <p>A shared Google Sheet works until someone updates the wrong cell, a deal gets missed, or your manager asks for a pipeline report and nobody can agree on the numbers.</p>
           </div>
         </div>
         <div class="problem-item">
-          <span class="problem-icon">⏱</span>
+          <span class="problem-icon">🔁</span>
           <div>
-            <h4>Generic tools never quite fit</h4>
-            <p>Every team tracks deals differently. Off-the-shelf CRMs make you adapt to them — spending weeks on configuration for a system that still doesn't match how your team actually works.</p>
+            <h4>Half your team isn't updating the CRM anyway</h4>
+            <p>Even when you have a CRM, the data goes stale because nobody has time to log everything. Managers lose visibility, deals slip, and it's not because anyone dropped the ball — it's because nobody could see it coming.</p>
           </div>
         </div>
       </div>
@@ -228,7 +232,7 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
       <div class="step">
         <div class="step-num">01</div>
         <h3>Discovery Call</h3>
-        <p>One 30-minute call. We ask about your pipeline stages, your team, and how you track deals today. That's all we need to get started.</p>
+        <p>One 30-minute call. We learn how your team tracks deals today, what's working, and what isn't. That's all we need to get started.</p>
         <span class="step-time">30 minutes</span>
       </div>
       <div class="step">
@@ -240,7 +244,7 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
       <div class="step">
         <div class="step-num">03</div>
         <h3>Launch & Stay</h3>
-        <p>We walk your team through the CRM live, make sure everyone's comfortable, and stay on retainer for support and updates as your business evolves.</p>
+        <p>We walk your team through the CRM live and stay on retainer for support and updates. Your business changes — your CRM should too.</p>
         <span class="step-time">Ongoing</span>
       </div>
     </div>
@@ -251,8 +255,8 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
 <section style="background:var(--surface)">
   <div class="section-inner">
     <p class="section-label">What You Get</p>
-    <h2>The first thing clients open every Monday morning<br><em>is the Reports tab.</em></h2>
-    <p class="features-sub">Pipeline by rep, weighted forecast, revenue by client type, close-date projections. The numbers your team actually needs — not a generic dashboard you have to configure yourself.</p>
+    <h2>The first thing your team opens<br><em>on Monday morning.</em></h2>
+    <p class="features-sub">Everything they need to know about their pipeline, their clients, and their next moves — in one place, built around how they actually work.</p>
     <div class="features-grid">
       <div class="feature">
         <div class="feature-icon">📋</div>
@@ -261,28 +265,34 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
       </div>
       <div class="feature">
         <div class="feature-icon">👥</div>
-        <h3>Contacts & Companies</h3>
-        <p>Every client, contact, and company in one place — linked to their deals and activity history. Search across everything instantly.</p>
+        <h3>Full Client & Contact History</h3>
+        <p>Every deal, every conversation, every next step — linked to the right company and contact. Your whole team sees the same picture, instantly.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">📝</div>
-        <h3>Activity Logging & Notes</h3>
-        <p>Log a call, note a meeting, track next steps — directly on the deal. Your whole team sees the same history, so nothing falls through the cracks.</p>
+        <h3>Activity Logging Your Team Will Actually Use</h3>
+        <p>Log a call, note a meeting, track next steps — directly on the deal. Simple enough that people actually do it, so nothing falls through the cracks.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">📊</div>
-        <h3>Reports That Actually Mean Something</h3>
-        <p>Weighted pipeline forecast, revenue by rep, deal stage funnel, close-date projections — built around your business, not a generic template.</p>
+        <h3>Reports That Drive Decisions</h3>
+        <p>Weighted pipeline forecast, revenue by rep, deal stage funnel, close-date projections — built around your numbers, not a generic template you have to reconfigure.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🔒</div>
-        <h3>Individual Logins</h3>
-        <p>Each team member gets their own secure login. Your data stays private — no shared passwords, no open URLs.</p>
+        <h3>Individual Logins & Secure Access</h3>
+        <p>Every team member gets their own secure login. Your data stays private — no shared passwords, no open URLs.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">☁️</div>
         <h3>Fully Hosted & Maintained</h3>
         <p>We handle hosting, backups, and uptime. Nothing to install, nothing to manage. If something breaks, we fix it — that's what the retainer is for.</p>
+      </div>
+      <div class="feature feature-premium">
+        <div class="feature-premium-badge">Premium Add-on</div>
+        <div class="feature-icon">✉️</div>
+        <h3>Gmail Integration</h3>
+        <p>For teams that want zero manual logging — we offer Gmail integration that automatically captures every email sent and received, right on the deal timeline. Every conversation tracked, without anyone lifting a finger.</p>
       </div>
     </div>
   </div>
@@ -318,7 +328,7 @@ footer{padding:48px;border-top:1px solid var(--border);display:flex;align-items:
   <div class="section-inner">
     <p class="section-label">See it before you commit</p>
     <h2>The demo is live.<br><em>No signup, no sales call.</em></h2>
-    <p>Six industries, real data, full pipeline and reports. Spend 10 minutes in the demo and you'll know immediately if this is the right fit for your team.</p>
+    <p>Six industries, real data, full pipeline and reports. Click into deals, check the activity history, spend time in the Reports tab — it's all live and interactive. Most people know within 10 minutes if this is the right fit.</p>
     <div class="hero-actions">
       <a href="https://demo.madecrm.io" target="_blank" class="btn-primary">Try the demo</a>
       <a href="contact.html" class="btn-secondary">Book a call</a>
