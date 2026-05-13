@@ -18,8 +18,6 @@ html,body{background:var(--bg);color:var(--t);font-family:'Plus Jakarta Sans',sa
 body{background:radial-gradient(ellipse 1200px 600px at 50% -200px,rgba(200,146,42,0.10),transparent 60%),radial-gradient(ellipse 800px 500px at 100% 30%,rgba(200,146,42,0.04),transparent 60%),var(--bg)}
 em{font-style:italic;color:var(--gold2)}
 a{color:inherit;text-decoration:none}
-
-/* NAV */
 .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(20px);background:rgba(10,15,26,.72);border-bottom:1px solid var(--line);padding:14px 56px;display:flex;align-items:center;justify-content:space-between}
 .brand{font-weight:700;font-size:16px;letter-spacing:-.3px;display:flex;align-items:baseline;gap:2px}
 .brand .crm{color:var(--gold)}
@@ -28,84 +26,58 @@ a{color:inherit;text-decoration:none}
 .nav-links a:hover,.nav-links a.active{color:var(--t)}
 .nav-cta{padding:8px 16px;border:1px solid var(--gold);color:var(--gold2);border-radius:8px;font-size:13px;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:6px}
 .nav-cta:hover{background:var(--gold);color:#0a1628}
-
-/* EYEBROW */
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--line2);border-radius:100px;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold2);font-weight:500;margin-bottom:24px;background:rgba(200,146,42,0.04)}
-.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(200,146,42,.2)}
-
-/* BUTTONS */
-.btn-p{background:var(--gold);color:#0a0f1a;padding:13px 22px;border-radius:10px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px -8px rgba(200,146,42,.5),inset 0 1px 0 rgba(255,255,255,.25);transition:.15s}
-.btn-p:hover{transform:translateY(-1px);box-shadow:0 12px 28px -8px rgba(200,146,42,.6)}
-.btn-s{padding:13px 22px;border-radius:10px;border:1px solid var(--line2);font-weight:500;font-size:14px;color:var(--t);transition:.15s;display:inline-flex;align-items:center;gap:8px}
-.btn-s:hover{border-color:var(--gold);color:var(--gold2)}
-
-/* SECTION RULE */
+section{position:relative;z-index:2}
+.s{padding:96px 56px;border-top:1px solid var(--line)}
+.s-inner{max-width:1180px;margin:0 auto}
 .s-rule{display:flex;align-items:center;gap:16px;margin-bottom:48px}
 .s-num{width:2px;height:18px;background:linear-gradient(180deg,var(--gold),rgba(200,146,42,.2));flex-shrink:0;border-radius:1px}
 .s-eye{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);font-weight:600}
 .s-line{flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
-
-/* HERO */
-.ph{padding:96px 56px 48px;text-align:center;position:relative;z-index:2}
-.ph h1{font-family:'Instrument Serif',serif;font-size:84px;line-height:.98;letter-spacing:-2px;font-weight:400;margin-bottom:20px}
-.ph h1 em{color:var(--gold2)}
-.ph p{font-size:18px;color:var(--t2);max-width:560px;margin:0 auto;font-weight:300}
-
-/* PRICING CARDS */
-.pricing-wrap{max-width:1080px;margin:0 auto;padding:48px 56px 96px;position:relative;z-index:2}
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:80px}
-.pc{padding:36px;background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:18px;position:relative;box-shadow:0 30px 60px -30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.04)}
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,146,42,.4),transparent)}
-.pc.feat{border-color:rgba(200,146,42,.4);background:linear-gradient(180deg,rgba(200,146,42,.06),var(--surface));box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 60px -20px rgba(200,146,42,.2),inset 0 1px 0 rgba(255,255,255,.06)}
-.pc.feat .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#0a0f1a;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;box-shadow:0 8px 24px -8px rgba(200,146,42,.5)}
-.pc-eye{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:8px;font-weight:600}
-.pc-name{font-family:'Instrument Serif',serif;font-size:32px;letter-spacing:-.5px;font-weight:400;margin-bottom:8px}
-.pc-desc{font-size:14px;color:var(--t2);line-height:1.65;margin-bottom:28px;min-height:42px}
-.pc-amt{font-family:'Instrument Serif',serif;font-size:72px;line-height:.85;letter-spacing:-2.5px;font-weight:400;margin-bottom:6px}
-.pc-amt small{font-size:22px;color:var(--t2);letter-spacing:0;font-style:italic;margin-left:6px}
-.pc-per{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:32px}
-.pc hr{border:0;border-top:1px solid var(--line);margin:0 0 24px}
-.pc-feats{display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
-.pc-feat{font-size:14px;color:var(--t2);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
-.pc-feat::before{content:'';width:14px;height:14px;flex-shrink:0;background:radial-gradient(circle,var(--gold) 35%,transparent 36%);margin-top:2px}
-.btn-link{display:flex;justify-content:center;align-items:center;padding:14px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:.15s;width:100%}
-.pc-outline{border:1px solid var(--line2);color:var(--t)}
-.pc-outline:hover{border-color:var(--gold);color:var(--gold2)}
-.pc-solid{background:var(--gold);color:#0a0f1a;box-shadow:0 8px 24px -8px rgba(200,146,42,.5),inset 0 1px 0 rgba(255,255,255,.25)}
-.pc-solid:hover{transform:translateY(-1px)}
-.pc-note{font-size:12px;color:var(--t3);margin-top:14px;text-align:center}
-
-/* FAQ */
-.faq{margin-bottom:64px}
-.faq h2{font-family:'Instrument Serif',serif;font-size:48px;line-height:1.05;letter-spacing:-1px;font-weight:400;margin-bottom:36px}
-.faq h2 em{color:var(--gold2)}
-.faq-list{display:flex;flex-direction:column}
-.faq-item{padding:24px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:24px 1fr;gap:24px;align-items:start}
-.faq-bar{width:2px;height:24px;background:linear-gradient(180deg,var(--gold),rgba(200,146,42,.2));border-radius:1px;margin-top:4px}
-.faq-q{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:-.3px;font-weight:400;margin-bottom:10px;color:var(--t)}
-.faq-a{font-size:14.5px;color:var(--t2);line-height:1.7}
-
-/* BOTTOM CTA */
-.bottom-cta{padding:48px;background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:18px;text-align:center;position:relative;overflow:hidden}
-.bottom-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,146,42,.4),transparent)}
-.bottom-cta h3{font-family:'Instrument Serif',serif;font-size:36px;letter-spacing:-.5px;font-weight:400;margin-bottom:10px}
-.bottom-cta h3 em{color:var(--gold2)}
-.bottom-cta p{font-size:15px;color:var(--t2);max-width:440px;margin:0 auto 28px;font-weight:300}
-
-/* FOOTER */
+.hero{padding:96px 56px 80px;text-align:center;position:relative;z-index:2}
+.hero-inner{max-width:720px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--line2);border-radius:100px;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold2);font-weight:500;margin-bottom:24px;background:rgba(200,146,42,0.04)}
+.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(200,146,42,.2)}
+h1{font-family:'Instrument Serif',serif;font-size:64px;line-height:1.0;letter-spacing:-1.5px;font-weight:400;margin-bottom:20px}
+.hero-sub{font-size:17px;color:var(--t2);max-width:580px;margin:0 auto 36px;font-weight:300;line-height:1.6}
+.btn-p{background:var(--gold);color:#0a0f1a;padding:13px 22px;border-radius:10px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px -8px rgba(200,146,42,.5),inset 0 1px 0 rgba(255,255,255,.25);transition:.15s}
+.btn-p:hover{transform:translateY(-1px);box-shadow:0 12px 28px -8px rgba(200,146,42,.6)}
+.btn-s{padding:13px 22px;border-radius:10px;border:1px solid var(--line2);font-weight:500;font-size:14px;color:var(--t);transition:.15s;display:inline-flex;align-items:center;gap:8px}
+.btn-s:hover{border-color:var(--gold);color:var(--gold2)}
+.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px}
+.model-card{padding:36px;background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:16px;position:relative}
+.model-card.feat{border-color:rgba(200,146,42,.4);background:linear-gradient(180deg,rgba(200,146,42,.06),var(--surface))}
+.model-card.feat::before{content:'Ongoing';position:absolute;top:-10px;left:24px;background:var(--gold);color:#0a0f1a;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+.mc-eye{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);font-weight:600;font-family:'JetBrains Mono',monospace;margin-bottom:10px}
+.mc-name{font-family:'Instrument Serif',serif;font-size:32px;font-weight:400;margin-bottom:12px;line-height:1.1}
+.mc-desc{font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:24px}
+.mc-feats{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.mc-feat{font-size:13.5px;color:var(--t2);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.mc-feat::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
+.mc-note{font-size:12px;color:var(--t3);margin-top:14px;line-height:1.6;padding-top:14px;border-top:1px solid var(--line)}
+.scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.scope-card{padding:24px;background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:12px}
+.scope-card h4{font-size:14px;font-weight:600;margin-bottom:6px;color:var(--t)}
+.scope-card p{font-size:13px;color:var(--t2);line-height:1.6}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--line);padding:22px 0}
+.faq-q{font-size:15px;font-weight:600;margin-bottom:8px;color:var(--t)}
+.faq-a{font-size:13.5px;color:var(--t2);line-height:1.7}
+.cta-final{padding:96px 56px;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(200,146,42,.12),transparent 70%);filter:blur(40px);pointer-events:none}
+.cta-final h2{font-family:'Instrument Serif',serif;font-size:56px;line-height:1.05;letter-spacing:-1px;margin-bottom:16px;position:relative;font-weight:400}
+.cta-final p{font-size:16px;color:var(--t2);max-width:480px;margin:0 auto 32px;font-weight:300;position:relative}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 footer{padding:48px 56px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;font-size:12.5px;color:var(--t3)}
 .footer-links{display:flex;gap:28px}
 footer a:hover{color:var(--t2)}
-
-@media(max-width:880px){
-  .nav{padding:12px 22px}
-  .nav-links a:not(.nav-cta){display:none}
-  .ph{padding:80px 22px 40px}
-  .ph h1{font-size:54px}
-  .pricing-wrap{padding:40px 22px 64px}
-  .pricing-grid{grid-template-columns:1fr}
-  .faq-item{grid-template-columns:18px 1fr;gap:16px}
-  footer{padding:32px 22px;flex-direction:column;text-align:center}
+@media(max-width:900px){
+  .nav{padding:14px 24px}.nav-links{display:none}
+  .hero{padding:80px 24px 56px}
+  .s{padding:64px 24px}
+  .model-grid{grid-template-columns:1fr}
+  .scope-grid{grid-template-columns:1fr}
+  .cta-final{padding:64px 24px}
+  footer{padding:32px 24px;flex-direction:column;text-align:center}
   .footer-links{flex-wrap:wrap;justify-content:center}
 }
 </style>
@@ -124,99 +96,129 @@ footer a:hover{color:var(--t2)}
 </nav>
 
 <!-- HERO -->
-<section class="ph">
-  <div class="eyebrow"><span class="dot"></span>Pricing</div>
-  <h1>Simple pricing. <em>No surprises.</em></h1>
-  <p>One setup fee. One monthly retainer. No per-seat charges, no hidden tiers, no upsells.</p>
-</section>
-
-<div class="pricing-wrap">
-
-  <!-- CARDS -->
-  <div class="pricing-grid">
-    <div class="pc">
-      <div class="pc-eye">Setup · One-Time</div>
-      <div class="pc-name">Custom Build</div>
-      <div class="pc-desc">Everything your team needs to get up and running with a CRM built around your exact workflow.</div>
-      <div class="pc-amt">$3,000<small>+</small></div>
-      <div class="pc-per">Starting · 50% at kickoff</div>
-      <hr>
-      <div class="pc-feats">
-        <div class="pc-feat">Custom pipeline stages &amp; terminology</div>
-        <div class="pc-feat">Team setup — up to 10 users</div>
-        <div class="pc-feat">Contacts &amp; companies database</div>
-        <div class="pc-feat">Data migration from your current tool</div>
-        <div class="pc-feat">Reports dashboard</div>
-        <div class="pc-feat">Individual secure logins</div>
-        <div class="pc-feat">1-hour onboarding call</div>
-        <div class="pc-feat">30 days post-launch support</div>
-      </div>
-      <a href="contact.html" class="btn-link pc-outline">Get a quote</a>
-      <p class="pc-note">Every project is scoped individually — pricing varies by complexity and team size.</p>
-    </div>
-    <div class="pc feat">
-      <div class="badge">Most popular</div>
-      <div class="pc-eye">Monthly · Retainer</div>
-      <div class="pc-name">Hosting &amp; Support</div>
-      <div class="pc-desc">Ongoing hosting, support, and maintenance so your CRM stays fast, secure, and current.</div>
-      <div class="pc-amt">$300<small>/mo</small></div>
-      <div class="pc-per">Cancel with 30 days notice</div>
-      <hr>
-      <div class="pc-feats">
-        <div class="pc-feat">Dedicated hosting on Railway</div>
-        <div class="pc-feat">Weekly automated database backups</div>
-        <div class="pc-feat">Bug fixes &amp; minor UI updates</div>
-        <div class="pc-feat">Up to 2 hrs/mo of feature requests</div>
-        <div class="pc-feat">Email support · 48-hour response</div>
-        <div class="pc-feat">SSL certificate &amp; security updates</div>
-      </div>
-      <a href="contact.html" class="btn-link pc-solid">Get started</a>
-    </div>
-  </div>
-
-  <!-- FAQ -->
-  <div class="faq">
-    <div class="s-rule"><span class="s-num"></span><span class="s-eye">Common questions</span><span class="s-line"></span></div>
-    <h2 style="text-align:center">Frequently asked. <em>Plainly answered.</em></h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <span class="faq-bar"></span>
-        <div><div class="faq-q">How long does it take to build?</div><div class="faq-a">Most projects are live within 2–4 weeks from kickoff. Timeline depends on how quickly we receive your data and feedback during the review phase.</div></div>
-      </div>
-      <div class="faq-item">
-        <span class="faq-bar"></span>
-        <div><div class="faq-q">What happens if I cancel?</div><div class="faq-a">Cancel the retainer with 30 days written notice. We'll provide a full data export within 5 business days and permanently delete your data from our servers within 30 days. You own your data — always.</div></div>
-      </div>
-      <div class="faq-item">
-        <span class="faq-bar"></span>
-        <div><div class="faq-q">Can I migrate from HubSpot or Salesforce?</div><div class="faq-a">Yes — migration from one source is included in the setup fee. If you have data coming from multiple sources, just mention it when you get in touch and we'll scope it out.</div></div>
-      </div>
-      <div class="faq-item">
-        <span class="faq-bar"></span>
-        <div><div class="faq-q">Is there a per-user fee?</div><div class="faq-a">No. The retainer covers your entire team — up to 10 users included, with additional users available on request at no extra cost.</div></div>
-      </div>
-      <div class="faq-item">
-        <span class="faq-bar"></span>
-        <div><div class="faq-q">What if I need features that aren't in the standard build?</div><div class="faq-a">Custom feature requests come up all the time — just get in touch and we'll figure out the right scope and timeline together.</div></div>
-      </div>
-      <div class="faq-item">
-        <span class="faq-bar"></span>
-        <div><div class="faq-q">Do I own the code?</div><div class="faq-a">Yes. Your CRM lives in a dedicated GitHub repository that belongs to you. You can self-host or take the codebase at any time.</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BOTTOM CTA -->
-  <div class="bottom-cta">
-    <h3>Not sure what you need? <em>Let's figure it out.</em></h3>
-    <p>Every project is scoped individually. Tell us about your team and we'll recommend the right fit.</p>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span>Pricing</div>
+    <h1>Priced for the build, <em>not the seat count.</em></h1>
+    <p class="hero-sub">Every Made CRM is custom — so every quote is custom too. We scope each project based on your team size, pipeline complexity, and what you need on day one.</p>
     <a href="contact.html" class="btn-p">Get a custom quote →</a>
   </div>
-
 </div>
 
+<!-- MODEL -->
+<section class="s">
+  <div class="s-inner">
+    <div class="s-rule"><span class="s-num"></span><span class="s-eye">How it's structured</span><span class="s-line"></span></div>
+    <div class="model-grid">
+      <div class="model-card">
+        <div class="mc-eye">One-time · Setup</div>
+        <div class="mc-name">Custom Build</div>
+        <div class="mc-desc">Everything it takes to get your team live — configured, loaded with your data, and ready to use on day one.</div>
+        <div class="mc-feats">
+          <div class="mc-feat">Custom pipeline stages and terminology built around how your team works</div>
+          <div class="mc-feat">Data migration from your current tool — spreadsheets, HubSpot, Salesforce, or other</div>
+          <div class="mc-feat">Individual secure logins for your entire team</div>
+          <div class="mc-feat">Reports dashboard configured for your metrics</div>
+          <div class="mc-feat">1-hour onboarding call and 30 days post-launch support</div>
+        </div>
+        <div class="mc-note">Scope and pricing determined after a discovery call. No surprises — everything agreed on before work begins.</div>
+      </div>
+      <div class="model-card feat">
+        <div class="mc-eye">Monthly · Retainer</div>
+        <div class="mc-name">Hosting & Support</div>
+        <div class="mc-desc">Ongoing hosting, maintenance, and support so your CRM stays fast, secure, and up to date — without you thinking about it.</div>
+        <div class="mc-feats">
+          <div class="mc-feat">Dedicated hosting on enterprise-grade infrastructure</div>
+          <div class="mc-feat">Weekly automated database backups</div>
+          <div class="mc-feat">Bug fixes and minor UI updates included</div>
+          <div class="mc-feat">Up to 2 hours per month of small feature requests</div>
+          <div class="mc-feat">Email support with 48-hour response time</div>
+        </div>
+        <div class="mc-note">Cancel with 30 days written notice. Your data is always yours — full export available at any time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE FACTORS -->
+<section class="s" style="padding-top:0;border-top:none">
+  <div class="s-inner">
+    <div class="s-rule"><span class="s-num"></span><span class="s-eye">What affects the quote</span><span class="s-line"></span></div>
+    <p style="font-size:15px;color:var(--t2);max-width:600px;margin-bottom:32px;font-weight:300;line-height:1.7">Every project is different. These are the factors that typically affect scope — and what we talk through on the discovery call.</p>
+    <div class="scope-grid">
+      <div class="scope-card">
+        <h4>Team size</h4>
+        <p>More users means more logins, more owner filters, and more nuance in how reports are broken out by person.</p>
+      </div>
+      <div class="scope-card">
+        <h4>Pipeline complexity</h4>
+        <p>A single pipeline with 5 stages is straightforward. Multiple pipelines with custom fields, deal types, and conditional logic takes more time.</p>
+      </div>
+      <div class="scope-card">
+        <h4>Data migration</h4>
+        <p>Clean spreadsheets migrate quickly. Multiple sources, duplicate records, or messy historical data requires more cleanup work.</p>
+      </div>
+      <div class="scope-card">
+        <h4>Custom features</h4>
+        <p>Standard builds cover pipeline, contacts, companies, activity, and reports. Custom fields, integrations, or unique workflows are scoped separately.</p>
+      </div>
+      <div class="scope-card">
+        <h4>Industry fit</h4>
+        <p>Some industries have specific terminology, deal structures, or reporting needs that require more configuration out of the gate.</p>
+      </div>
+      <div class="scope-card">
+        <h4>Timeline</h4>
+        <p>Standard delivery is 2–4 weeks. Rush projects with tighter deadlines can be accommodated and may affect scope.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s">
+  <div class="s-inner">
+    <div class="s-rule"><span class="s-num"></span><span class="s-eye">Common questions</span><span class="s-line"></span></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Why don't you list specific prices?</div>
+        <div class="faq-a">Because a 3-person consulting firm and a 12-person biotech team need very different things. Listing a single price either undersells what we do or prices out teams that would be a great fit. A 30-minute call tells us everything we need to give you a real number.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the general range I should expect?</div>
+        <div class="faq-a">Most builds fall in the $2,500–$6,000 range for setup, depending on complexity. Monthly retainers typically start at $300/month. We'll give you an exact number after a discovery call — no surprises.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a per-seat fee?</div>
+        <div class="faq-a">No. We don't charge per user. Your retainer covers your entire team — whether that's 3 people or 15.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I need features beyond the standard build?</div>
+        <div class="faq-a">Custom feature development is available and scoped separately — always agreed upon before work begins. Hourly rates apply for development beyond the standard scope.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if I want to cancel?</div>
+        <div class="faq-a">Cancel the retainer with 30 days written notice. We provide a full data export within 5 business days. You own your data — always. You can also take the codebase and self-host if you prefer.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I own the code?</div>
+        <div class="faq-a">Yes. Your CRM lives in a dedicated GitHub repository. You can take it, self-host it, or hand it to another developer at any time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <h2>Let's talk about <em>your build.</em></h2>
+  <p>30 minutes is all we need to scope your project and give you a real number — no pressure, no sales pitch.</p>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn-p">Get a custom quote →</a>
+    <a href="https://demo.madecrm.io" target="_blank" class="btn-s">Try the demo first</a>
+  </div>
+</section>
+
 <footer>
-  <a href="index.html" class="brand">Made<span class="crm">&nbsp;CRM</span></a>
+  <div class="brand">Made<span class="crm">&nbsp;CRM</span></div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
