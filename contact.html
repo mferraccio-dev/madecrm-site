@@ -120,7 +120,7 @@ footer a:hover{color:var(--t2)}
         <div>
           <h4>Live demo</h4>
           <div class="v"><a href="https://demo.madecrm.io" target="_blank">demo.madecrm.io</a></div>
-          <div class="sub">Six industries, real data, no signup</div>
+          <div class="sub">Eight industries, real data, no signup</div>
         </div>
       </div>
       <div class="ci">
@@ -156,13 +156,14 @@ footer a:hover{color:var(--t2)}
           <label>Industry</label>
           <select id="f-industry">
             <option value="">Select…</option>
+            <option>Wealth Management</option>
             <option>Biotech &amp; Pharma</option>
-            <option>Financial Advisory</option>
             <option>Consulting</option>
-            <option>Boutique Agency</option>
             <option>Real Estate</option>
+            <option>Marketing Agency</option>
             <option>Executive Recruiting</option>
-            <option>Pro Services</option>
+            <option>Law Firm</option>
+            <option>Accounting</option>
             <option>Other</option>
           </select>
         </div>
@@ -222,7 +223,8 @@ function submitForm(e){
       name, company, email,
       industry: get('f-industry').value,
       size: get('f-size').value,
-      message: get('f-message').value.trim()
+      message: get('f-message').value.trim(),
+      source: 'Marketing site contact form'
     })
   })
   .then(r => {
