@@ -6,36 +6,12 @@
 <title>Features — Made CRM</title>
 <meta name="description" content="See what Made CRM actually does — pipeline forecasting, full activity history, multi-industry support, engagement health, and reports your team will actually use.">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a0f1a;--ink:#06090f;
-  --surface:#0f1623;--surface2:#141d2d;--surface3:#1a2436;
-  --line:rgba(255,255,255,0.06);--line2:rgba(255,255,255,0.12);
-  --t:#f4f2ed;--t2:#9aa3b8;--t3:#56607a;
-  --gold:#c8922a;--gold2:#e8b86d;--gold3:#f0d9a8;
-  --green:#10b981;
-}
-html,body{background:var(--bg);color:var(--t);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
-body{background:radial-gradient(ellipse 1200px 600px at 50% -200px,rgba(200,146,42,0.10),transparent 60%),radial-gradient(ellipse 800px 500px at 100% 30%,rgba(200,146,42,0.04),transparent 60%),var(--bg)}
-em{font-style:italic;color:var(--gold2)}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
+/* FEATURES-PAGE EYEBROW OVERRIDE (uses monospace) */
+.eyebrow{font-family:'JetBrains Mono',monospace}
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(20px);background:rgba(10,15,26,.72);border-bottom:1px solid var(--line);padding:14px 56px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:700;font-size:16px;letter-spacing:-.3px;display:flex;align-items:baseline;gap:2px}
-.brand .crm{color:var(--gold)}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{font-size:13.5px;color:var(--t2);font-weight:500;transition:color .15s}
-.nav-links a:hover,.nav-links a.active{color:var(--t)}
-.nav-cta{padding:8px 16px;border:1px solid var(--gold);color:var(--gold2);border-radius:8px;font-size:13px;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:6px}
-.nav-cta:hover{background:var(--gold);color:#0a1628}
-
-/* SHARED */
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--line2);border-radius:100px;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold2);font-weight:500;margin-bottom:24px;background:rgba(200,146,42,0.04);font-family:'JetBrains Mono',monospace}
-.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(200,146,42,.2)}
-
+/* LABEL MONO (used inside feature sections) */
 .label-mono{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3)}
 
 /* HERO */
@@ -43,10 +19,6 @@ img{max-width:100%;display:block}
 .hero h1{font-family:'Instrument Serif',serif;font-size:84px;line-height:.98;letter-spacing:-2.5px;font-weight:400;margin-bottom:24px;max-width:920px;margin-left:auto;margin-right:auto}
 .hero .lede{font-size:17px;color:var(--t2);font-weight:300;line-height:1.7;max-width:580px;margin:0 auto 36px}
 .hero-ctas{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.btn-primary{background:var(--gold);color:#0a0f1a;border:none;border-radius:10px;padding:13px 22px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px -8px rgba(200,146,42,.5),inset 0 1px 0 rgba(255,255,255,.25);text-decoration:none}
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 28px -8px rgba(200,146,42,.6)}
-.btn-secondary{padding:13px 22px;border:1px solid var(--line2);color:var(--t);border-radius:10px;font-size:14px;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:transparent}
-.btn-secondary:hover{border-color:var(--gold);color:var(--gold2)}
 
 /* FEATURE SECTIONS */
 .features{max-width:1180px;margin:0 auto;padding:0 56px;position:relative;z-index:2}
@@ -87,19 +59,13 @@ img{max-width:100%;display:block}
 .pill{padding:8px 16px;border-radius:100px;border:1px solid var(--line2);background:rgba(255,255,255,0.02);color:var(--t2);font-size:13px;font-weight:500;transition:.15s;font-family:'JetBrains Mono',monospace;letter-spacing:.3px}
 .pill:hover{border-color:var(--gold);color:var(--gold2);background:rgba(200,146,42,0.06)}
 
-/* FINAL CTA */
+/* FINAL CTA OVERRIDE (smaller than default 64px) */
 .final-cta{max-width:780px;margin:0 auto;padding:96px 56px;text-align:center;border-top:1px solid var(--line)}
 .final-cta h2{font-family:'Instrument Serif',serif;font-size:56px;line-height:1.02;letter-spacing:-1.4px;font-weight:400;margin-bottom:20px}
 .final-cta p{font-size:16px;color:var(--t2);font-weight:300;line-height:1.7;max-width:520px;margin:0 auto 32px}
 
-/* FOOTER */
-footer{padding:48px 56px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;font-size:12.5px;color:var(--t3)}
-.footer-links{display:flex;gap:28px}
-footer a:hover{color:var(--t2)}
-
+/* MOBILE OVERRIDES */
 @media(max-width:880px){
-  .nav{padding:12px 22px}
-  .nav-links a:not(.nav-cta){display:none}
   .hero{padding:64px 22px 48px}
   .hero h1{font-size:54px;letter-spacing:-1.5px}
   .features{padding:0 22px}
@@ -112,8 +78,6 @@ footer a:hover{color:var(--t2)}
   .thumbs{grid-template-columns:1fr}
   .final-cta{padding:64px 22px}
   .final-cta h2{font-size:40px;letter-spacing:-.8px}
-  footer{padding:32px 22px;flex-direction:column;text-align:center}
-  .footer-links{flex-wrap:wrap;justify-content:center}
 }
 </style>
 </head>
