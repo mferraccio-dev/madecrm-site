@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features — Made CRM</title>
+<meta name="description" content="See what Made CRM actually does — pipeline forecasting, full activity history, multi-industry support, engagement health, and reports your team will actually use.">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0f1a;--ink:#06090f;
+  --surface:#0f1623;--surface2:#141d2d;--surface3:#1a2436;
+  --line:rgba(255,255,255,0.06);--line2:rgba(255,255,255,0.12);
+  --t:#f4f2ed;--t2:#9aa3b8;--t3:#56607a;
+  --gold:#c8922a;--gold2:#e8b86d;--gold3:#f0d9a8;
+  --green:#10b981;
+}
+html,body{background:var(--bg);color:var(--t);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{background:radial-gradient(ellipse 1200px 600px at 50% -200px,rgba(200,146,42,0.10),transparent 60%),radial-gradient(ellipse 800px 500px at 100% 30%,rgba(200,146,42,0.04),transparent 60%),var(--bg)}
+em{font-style:italic;color:var(--gold2)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(20px);background:rgba(10,15,26,.72);border-bottom:1px solid var(--line);padding:14px 56px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:16px;letter-spacing:-.3px;display:flex;align-items:baseline;gap:2px}
+.brand .crm{color:var(--gold)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:13.5px;color:var(--t2);font-weight:500;transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:var(--t)}
+.nav-cta{padding:8px 16px;border:1px solid var(--gold);color:var(--gold2);border-radius:8px;font-size:13px;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:6px}
+.nav-cta:hover{background:var(--gold);color:#0a1628}
+
+/* SHARED */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--line2);border-radius:100px;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--gold2);font-weight:500;margin-bottom:24px;background:rgba(200,146,42,0.04);font-family:'JetBrains Mono',monospace}
+.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(200,146,42,.2)}
+
+.label-mono{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3)}
+
+/* HERO */
+.hero{max-width:1180px;margin:0 auto;padding:96px 56px 64px;text-align:center;position:relative;z-index:2}
+.hero h1{font-family:'Instrument Serif',serif;font-size:84px;line-height:.98;letter-spacing:-2.5px;font-weight:400;margin-bottom:24px;max-width:920px;margin-left:auto;margin-right:auto}
+.hero .lede{font-size:17px;color:var(--t2);font-weight:300;line-height:1.7;max-width:580px;margin:0 auto 36px}
+.hero-ctas{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn-primary{background:var(--gold);color:#0a0f1a;border:none;border-radius:10px;padding:13px 22px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px -8px rgba(200,146,42,.5),inset 0 1px 0 rgba(255,255,255,.25);text-decoration:none}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 28px -8px rgba(200,146,42,.6)}
+.btn-secondary{padding:13px 22px;border:1px solid var(--line2);color:var(--t);border-radius:10px;font-size:14px;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:transparent}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold2)}
+
+/* FEATURE SECTIONS */
+.features{max-width:1180px;margin:0 auto;padding:0 56px;position:relative;z-index:2}
+.feature{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:center;padding:80px 0;border-top:1px solid var(--line)}
+.feature.reverse{grid-template-columns:1.25fr 1fr}
+.feature.reverse .feature-text{order:2}
+.feature.reverse .feature-visual{order:1}
+
+.feature-text{padding-left:18px;position:relative}
+.feature-text::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--gold),rgba(200,146,42,.2));border-radius:1px}
+.feature-text .label-mono{display:block;margin-bottom:14px}
+.feature-text h2{font-family:'Instrument Serif',serif;font-size:48px;line-height:1.02;letter-spacing:-1.2px;font-weight:400;margin-bottom:18px}
+.feature-text .desc{font-size:16px;color:var(--t2);font-weight:300;line-height:1.7;margin-bottom:24px;max-width:480px}
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.feature-list li{font-size:14.5px;color:var(--t2);line-height:1.6;padding-left:24px;position:relative}
+.feature-list li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(200,146,42,.15)}
+.feature-list li strong{color:var(--t);font-weight:600}
+
+.feature-visual{position:relative}
+.feature-visual .frame{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:14px;padding:10px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.04);position:relative;overflow:hidden}
+.feature-visual .frame::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,146,42,.4),transparent);border-radius:14px 14px 0 0}
+.feature-visual .frame img{width:100%;height:auto;border-radius:8px;display:block}
+.feature-visual .frame.placeholder{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:13px;font-family:'JetBrains Mono',monospace}
+
+/* INDUSTRIES */
+.industries{padding:96px 0 80px;border-top:1px solid var(--line);text-align:center;max-width:1000px;margin:0 auto}
+.industries h2{font-family:'Instrument Serif',serif;font-size:52px;line-height:1.02;letter-spacing:-1.4px;font-weight:400;margin-bottom:20px}
+.industries .desc{font-size:16px;color:var(--t2);font-weight:300;line-height:1.7;max-width:540px;margin:0 auto 48px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:36px}
+.thumb{position:relative;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);aspect-ratio:16/10;transition:.2s;display:block}
+.thumb::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,146,42,.3),transparent);z-index:2}
+.thumb:hover{transform:translateY(-3px);border-color:var(--gold)}
+.thumb:hover .thumb-label{color:var(--gold2)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.thumb-label{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(6,9,15,.95),transparent);color:var(--t);font-size:13.5px;font-weight:600;text-align:left;font-family:'JetBrains Mono',monospace;letter-spacing:.3px;transition:color .15s}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:760px;margin:0 auto}
+.pill{padding:8px 16px;border-radius:100px;border:1px solid var(--line2);background:rgba(255,255,255,0.02);color:var(--t2);font-size:13px;font-weight:500;transition:.15s;font-family:'JetBrains Mono',monospace;letter-spacing:.3px}
+.pill:hover{border-color:var(--gold);color:var(--gold2);background:rgba(200,146,42,0.06)}
+
+/* FINAL CTA */
+.final-cta{max-width:780px;margin:0 auto;padding:96px 56px;text-align:center;border-top:1px solid var(--line)}
+.final-cta h2{font-family:'Instrument Serif',serif;font-size:56px;line-height:1.02;letter-spacing:-1.4px;font-weight:400;margin-bottom:20px}
+.final-cta p{font-size:16px;color:var(--t2);font-weight:300;line-height:1.7;max-width:520px;margin:0 auto 32px}
+
+/* FOOTER */
+footer{padding:48px 56px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;font-size:12.5px;color:var(--t3)}
+.footer-links{display:flex;gap:28px}
+footer a:hover{color:var(--t2)}
+
+@media(max-width:880px){
+  .nav{padding:12px 22px}
+  .nav-links a:not(.nav-cta){display:none}
+  .hero{padding:64px 22px 48px}
+  .hero h1{font-size:54px;letter-spacing:-1.5px}
+  .features{padding:0 22px}
+  .feature,.feature.reverse{grid-template-columns:1fr;gap:40px;padding:56px 0}
+  .feature.reverse .feature-text{order:1}
+  .feature.reverse .feature-visual{order:2}
+  .feature-text h2{font-size:36px;letter-spacing:-.8px}
+  .industries{padding:64px 22px 56px}
+  .industries h2{font-size:38px;letter-spacing:-.8px}
+  .thumbs{grid-template-columns:1fr}
+  .final-cta{padding:64px 22px}
+  .final-cta h2{font-size:40px;letter-spacing:-.8px}
+  footer{padding:32px 22px;flex-direction:column;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="brand">Made<span class="crm">&nbsp;CRM</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="features.html" class="active">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://demo.madecrm.io" target="_blank" class="nav-cta">See the demo →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span>Features</div>
+  <h1>Everything your team needs. <em>Nothing you don't.</em></h1>
+  <p class="lede">A complete look at what Made CRM does — pipeline forecasting, full client history, multi-industry support, and reports that actually move the business forward.</p>
+  <div class="hero-ctas">
+    <a href="https://demo.madecrm.io" target="_blank" class="btn-primary">Try the live demo <span>→</span></a>
+    <a href="contact.html" class="btn-secondary">Schedule a call</a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+
+  <!-- Feature 1: Pipeline -->
+  <section class="feature">
+    <div class="feature-text">
+      <span class="label-mono">Pipeline</span>
+      <h2>A live pipeline that <em>thinks ahead.</em></h2>
+      <p class="desc">Most CRMs show you what's in the pipeline. Made CRM shows you what's at risk, what's stuck, and what's actually likely to close — without setup, without configuration, without a Salesforce admin.</p>
+      <ul class="feature-list">
+        <li><strong>Weighted forecasting</strong> — confidence scoring per deal rolls up to your quarterly forecast automatically</li>
+        <li><strong>Stuck-deal flagging</strong> — deals that haven't moved in 14+ days surface as "Needs Attention"</li>
+        <li><strong>Active vs Net-New split</strong> — track existing book and new business side-by-side, not jumbled together</li>
+        <li><strong>Per-owner filtering</strong> — one click to see just your deals, or just Sarah's</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="frame">
+        <img src="feature-pipeline.png" alt="Made CRM pipeline view showing weighted forecasting, stuck deal flagging, and color-coded stages">
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 2: Deal panel -->
+  <section class="feature reverse">
+    <div class="feature-visual">
+      <div class="frame">
+        <img src="feature-deal-panel.png" alt="Made CRM deal panel showing full activity log, deal details, and primary contact information">
+      </div>
+    </div>
+    <div class="feature-text">
+      <span class="label-mono">Client History</span>
+      <h2>Every conversation, <em>every detail.</em></h2>
+      <p class="desc">For relationship businesses, context is the product. Made CRM keeps every call, every note, every email logged against the deal — searchable forever, never lost in a Gmail thread.</p>
+      <ul class="feature-list">
+        <li><strong>Full activity timeline</strong> — calls, notes, emails, and meetings all in one place</li>
+        <li><strong>Inline editing</strong> — update stage, value, close date, owner without leaving the panel</li>
+        <li><strong>One-click email</strong> — opens your Gmail with the contact pre-filled and the deal context attached</li>
+        <li><strong>Custom deal fields</strong> — ARR, AUM, fees, source, category — terminology shaped to your business</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Feature 3: Dual pipelines -->
+  <section class="feature">
+    <div class="feature-text">
+      <span class="label-mono">Workflow</span>
+      <h2>Two pipelines. <em>One workflow.</em></h2>
+      <p class="desc">Existing clients and net-new prospects live different lives — different cycles, different touchpoints, different metrics. Made CRM separates them where it matters and rolls them up where it counts.</p>
+      <ul class="feature-list">
+        <li><strong>Active clients pipeline</strong> — onboarding, ongoing engagement, annual review, at-risk</li>
+        <li><strong>Prospect pipeline</strong> — qualified, discovery, proposal, due diligence, signed</li>
+        <li><strong>Unified reporting</strong> — total pipeline, win rate, and forecast pulled from both</li>
+        <li><strong>Stage customization</strong> — your stages, your names, mapped during the discovery call</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="frame">
+        <img src="feature-prospects.png" alt="Made CRM prospect pipeline showing lead qualified through contract signed stages">
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries">
+    <h2>One product, <em>shaped to your industry.</em></h2>
+    <p class="desc">The same Made CRM, with the data model, terminology, and stages built around how your industry actually runs. Try any of the six in the live demo — no signup.</p>
+    <div class="thumbs">
+      <a href="https://demo.madecrm.io?industry=wealth" target="_blank" class="thumb">
+        <img src="industry-wealth.png" alt="Wealth Management view in Made CRM">
+        <div class="thumb-label">Wealth · AUM, Households</div>
+      </a>
+      <a href="https://demo.madecrm.io?industry=realestate" target="_blank" class="thumb">
+        <img src="industry-realestate.png" alt="Real Estate view in Made CRM">
+        <div class="thumb-label">Real Estate · Listings, Buyers</div>
+      </a>
+      <a href="https://demo.madecrm.io?industry=recruiting" target="_blank" class="thumb">
+        <img src="industry-recruiting.png" alt="Executive Recruiting view in Made CRM">
+        <div class="thumb-label">Recruiting · Searches, Placements</div>
+      </a>
+    </div>
+    <div class="pills">
+      <a href="https://demo.madecrm.io?industry=wealth" target="_blank" class="pill">Wealth Management</a>
+      <a href="https://demo.madecrm.io?industry=biotech" target="_blank" class="pill">Biotech &amp; Pharma</a>
+      <a href="https://demo.madecrm.io?industry=consulting" target="_blank" class="pill">Consulting</a>
+      <a href="https://demo.madecrm.io?industry=realestate" target="_blank" class="pill">Real Estate</a>
+      <a href="https://demo.madecrm.io?industry=agency" target="_blank" class="pill">Marketing Agency</a>
+      <a href="https://demo.madecrm.io?industry=recruiting" target="_blank" class="pill">Executive Recruiting</a>
+    </div>
+  </section>
+
+  <!-- Feature 4: Reports -->
+  <section class="feature">
+    <div class="feature-text">
+      <span class="label-mono">Reports</span>
+      <h2>Reports that <em>earn the subscription.</em></h2>
+      <p class="desc">The reports dashboard is built for the person who actually has to answer "how are we doing this quarter?" — not for a finance team to slice in a separate BI tool.</p>
+      <ul class="feature-list">
+        <li><strong>Revenue dashboard</strong> — weighted forecast, total pipeline, win rate, commission projection</li>
+        <li><strong>Pipeline funnel by stage</strong> — visual breakdown of where the dollars sit and how long they linger</li>
+        <li><strong>Performance by owner</strong> — deals, gross, weighted, and closed per team member</li>
+        <li><strong>Top 10 deals by value</strong> — surfaced automatically, no manual ranking</li>
+        <li><strong>CSV export</strong> — for the CFO, for the board deck, for the spreadsheet you can't escape</li>
+      </ul>
+    </div>
+    <div class="feature-visual">
+      <div class="frame">
+        <img src="feature-reports.png" alt="Made CRM revenue dashboard with weighted forecast, win rate, and pipeline by stage">
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 5: Engagement Health -->
+  <section class="feature reverse">
+    <div class="feature-visual">
+      <div class="frame">
+        <img src="feature-engagement.png" alt="Made CRM client engagement health showing overdue, due soon, and recent contact indicators">
+      </div>
+    </div>
+    <div class="feature-text">
+      <span class="label-mono">Retention</span>
+      <h2>Relationships slipping — <em>before they do.</em></h2>
+      <p class="desc">For relationship-driven businesses — RIAs, law firms, recruiting shops — the deals you lose aren't the ones you fight for. They're the ones you forgot about. Engagement Health surfaces them while there's still time to act.</p>
+      <ul class="feature-list">
+        <li><strong>Days since last contact</strong> tracked automatically against every client</li>
+        <li><strong>Color-coded health</strong> — overdue, due soon, recent at a glance</li>
+        <li><strong>Tied to AUM or fee value</strong> so the biggest at-risk accounts surface first</li>
+        <li><strong>One-click drilldown</strong> to the deal panel to log the next touchpoint</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>The fastest way to understand it <em>is to try it.</em></h2>
+  <p>Six industries, real data, fully populated pipelines and reports. No signup, no walls. Click around for two minutes and you'll know whether Made CRM is for your team.</p>
+  <div class="hero-ctas">
+    <a href="https://demo.madecrm.io" target="_blank" class="btn-primary">Try the live demo <span>→</span></a>
+    <a href="contact.html" class="btn-secondary">Schedule a call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="brand">Made<span class="crm">&nbsp;CRM</span></a>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://demo.madecrm.io" target="_blank">Demo</a>
+  </div>
+  <div>© 2026 · Built in Colorado</div>
+</footer>
+
+</body>
+</html>
